@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Selection</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
+    <script rel="text/javascript" src="static/js/customscript.js"></script>
+</head>
+<body>
+                        <div class="col-md-6">
+							<!-- Reg-Form -->
+							<form action="#" id="sky-form4" class="sky-form">
+								<header>Registration form for Students</header>
+
+								<fieldset>
+									<section>
+										<label class="input">
+											<i class="icon-append fa fa-user"></i>
+											<input type="text" name="firstname" placeholder="First Name">
+											<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+										</label>
+									</section>
+                                    <section>
+										<label class="input">
+											<i class="icon-append fa fa-user"></i>
+											<input type="text" name="lastname" placeholder="Last Name">
+											<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+										</label>
+									</section>
+
+									<section>
+										<label class="input">
+											<i class="icon-append fa fa-envelope"></i>
+											<input type="email" name="email" placeholder="Email address">
+											<b class="tooltip tooltip-bottom-right">Needed</b>
+										</label>
+									</section>
+                                    <section>
+										<label class="input">
+											<i class="icon-append fa fa-linkedin"></i>
+											<input type="linkedin" name="linkedin" placeholder="Linkedin ID">
+											<b class="tooltip tooltip-bottom-right">Needed</b>
+										</label>
+									</section>
+
+								</fieldset>
+								<footer>
+									<button type="submit" onclick="createStudent()" class="btn-u">Submit</button>
+								</footer>
+							</form>
+							<!-- End Reg-Form -->
+						</div>
+                        <div class="col-md-6">
+							<!-- Reg-Form -->
+							<form action="#" id="sky-form4" class="sky-form">
+								<header>Registration form for Representatives</header>
+
+								<fieldset>
+									<section>
+										<label class="input">
+											<i class="icon-append fa fa-user"></i>
+											<input type="text" name="firstname" placeholder="First Name">
+											<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+										</label>
+									</section>
+                                    <section>
+										<label class="input">
+											<i class="icon-append fa fa-user"></i>
+											<input type="text" name="lastname" placeholder="Last Name">
+											<b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+										</label>
+									</section>
+
+									<section>
+										<label class="input">
+											<i class="icon-append fa fa-envelope"></i>
+											<input type="text" name="company" placeholder="Company Name">
+											<b class="tooltip tooltip-bottom-right">Needed</b>
+										</label>
+									</section>
+								</fieldset>
+								<footer>
+									<button type="submit" onclick="createPresenter()" class="btn-u">Submit</button>
+								</footer>
+							</form>
+							<!-- End Reg-Form -->
+						</div>
+
+</body>
+</html>

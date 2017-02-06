@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Interviewing</title>
+    <script type = "text/javascript">
+        //var apiKey=45717642;
+        //var sessionId="1_MX40NTcxNzY0Mn5-MTQ3ODk4NzM5Nzg1NX4vVEVRcmEyd2c5U2wzQjJkUnZYWE9PQ3l-fg";
+        //var token="T1==cGFydG5lcl9pZD00NTcxNzY0MiZzaWc9ZTcyZDA2ZjZlZWY5MDk3NGVmODJlNWQ3NjQ3YmM4MjAxYmQ0ZmM1MzpzZXNzaW9uX2lkPTFfTVg0ME5UY3hOelkwTW41LU1UUTNPRGs0TnpNNU56ZzFOWDR2VkVWUmNtRXlkMmM1VTJ3elFqSmtVblpZV0U5UFEzbC1mZyZjcmVhdGVfdGltZT0xNDc4OTg3NDU1Jm5vbmNlPTAuNzQ2MTY0MjUzNjU3NjI0MSZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNDc5NTkyMjk2";
+        console.log("in the html. yayee")
+        var sessionID = "{{ sessionID }}";
+        var Token = "{{ token }}";
+        var Api_Key = "{{ Api_key }}";
+        //Initialize the session, setup event listener and connect
+        var publisher = TB.initPublisher(Api_Key);
+
+        var session = TB.initSession(sessionID);
+        session.connect(Api_Key,Token, function (err) {
+            session.publish(publisher);
+        })
+
+        session.on('sessionConnected',function(event){
+            event.streams.forEach(function (stream) {
+                if(stream.connection.connectionId != session.connection.connectionId){
+                    session.subscribe(stream);
+                }
+            });
+        });
+
+
+        session.on('StreamCreated',function(event){
+            event.streams.forEach(function (stream) {
+                if(stream.connection.connectionId != session.connection.connectionId){
+                    session.subscribe(stream);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

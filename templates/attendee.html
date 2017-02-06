@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Demo</title>
+    <script src="static/js/lib/angular/angular.min.js"></script>
+    <script src="static/js/controllers.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <link rel="stylesheet" href="static/css/attendee_style.css">
+</head>
+<body>
+<div class="main" ng-controller = "MyController">
+
+    <div class="search">
+        <h1>Company Directory</h1>
+        <label>search: </label>
+        <input ng-model="query" placeholder="Search for artists" autofocus>
+    </div>
+    <ul class="artistlist">
+        <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction">
+
+                <div id = {{item.name}} class="info" {% comment %}ng-click = "sessionRequested({{item.name}} )"{% endcomment %}>
+                <h2>{{item.name}}</h2>
+                <h3>{{item.reknown}}</h3>
+            </div>
+        </li>
+    </ul>
+
+    <ul class="companies">
+
+    </ul>
+</div>
+</body>
+</html>
